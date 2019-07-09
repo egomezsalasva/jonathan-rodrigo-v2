@@ -1,0 +1,11 @@
+//To Dos
+
+- Change image every 70px
+
+
+//Github Commits
+
+
+//Future Features
+
+- Pointer draw FOR 70px then restart counter

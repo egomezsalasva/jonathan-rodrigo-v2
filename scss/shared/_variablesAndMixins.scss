@@ -1,0 +1,36 @@
+
+//Font Stacks
+$feniceStack: 'FeniceRegular', sans-serif;
+
+//Font Size
+$font20: 2em;
+$font30: 3em;
+
+//Colors
+$nathanBlack: #050505;
+$nathanWhite: #FAFAFA;
+
+
+
+//Viewport Widths (Desktop)
+$width60px: 4.6875vw;
+
+//Viewport Heights (Desktop)
+$height45px: 6.42857143vh;
+$height60px: 8.571142867vh;
+
+
+
+
+
+///////////////////
+/// MIXINS ////////
+///////////////////
+
+
+@mixin homeLinks {
+    font-family: $feniceStack;
+    font-size: $font20;
+    line-height: 20px;
+    color: $nathanBlack;
+}
