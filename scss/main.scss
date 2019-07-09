@@ -12,6 +12,10 @@
 //Variables & Mixins
 @import './shared/_variablesAndMixins.scss';
 
+//Z-Index
+// logoType, aboutLink: 1000
+
+
 
 *{
     margin: 0;
@@ -41,6 +45,7 @@ header{
         position: absolute;
         left: $width60px;
         top: $height45px;
+        z-index: 1000;
     }
 
     .aboutLink{
@@ -52,42 +57,92 @@ header{
         right: $width60px;
         top: $height45px;
         transform: translateY( 5px ); //difference between fonts divided by 2: (30 - 20) / 2 
+        z-index: 1000;
     }
 
 }
 
+
+
 .artworkLeftContainer{
+
+    //dimension
+    width: 50vw;
+    height: 100vh;
+    //position
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50vw;
-    height: 90vh;
-    // background: red;
+
+
+    .artworkImage{
+        //position
+        position: absolute;
+        left: 50%;
+        top: 49%;
+        transform: translate(-50%, -50%);
+    }
+
+    .horizontal{
+        //dimensions
+        width: $width440px;
+    }
+
+    .vertical{
+        //dimensions
+        width: $width240px;
+    }
 
     .link{
+        //text
         @include homeLinks;
         text-align: center;
+        //position
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: $height60px;
     }
+
 }
 
 .commercialRightContainer{
+
+    //dimesions
+    width: 50vw;
+    height: 100vh;
+    //position
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 50vw;
-    height: 90vh;
-    // background: blue;
+
+    .commercialImage{
+        //position
+        position: absolute;
+        left: 50%;
+        top: 49%;
+        transform: translate(-50%, -50%);
+    }
+
+    .horizontal{
+        //dimensions
+        width: $width440px;
+    }
+
+    .vertical{
+        //dimensions
+        width: $width240px;
+    }
 
     .link{
+        //text
         @include homeLinks;
         text-align: center;
+        //position
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: $height60px;
     }
+
 }
