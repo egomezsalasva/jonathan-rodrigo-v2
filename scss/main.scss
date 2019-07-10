@@ -134,11 +134,15 @@ header{
     .horizontal{
         //dimensions
         width: $width440px;
+        height: $width293px;
+        object-fit: cover;
     }
 
     .vertical{
         //dimensions
         width: $width240px;
+        height: $width360px;
+        object-fit: cover;
     }
 
     .link{

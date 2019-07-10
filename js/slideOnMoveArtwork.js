@@ -7,18 +7,19 @@ const artworkImage = document.querySelector(".artworkImage")
 
 
 //Initialize Counters
-let indexOfImages = 1
+let indexOfImages = 0
 let mouseCounter = 0
+
 
 //Artwork Image List
 const artworkImageList = [
     {
         source: "./imgs/artwork01.png",
-        ratio: "horizontal"
+        ratio: "horizontal",
     },
     {
         source: "./imgs/artwork02.png",
-        ratio: "horizontal"
+        ratio: "horizontal",
     },
     {
         source: "./imgs/artwork03.png",
@@ -134,21 +135,31 @@ const artworkImageList = [
 //Slideshow Images On Mouse Move
 artworkContainer.addEventListener("mousemove", () => {
 
+    //Track Pixels moved by mouse
     mouseCounter ++
 
+    //Every X pixels change image and dimensions - When it reaches 50 initialize(for loop could work) 
     if( mouseCounter > 50 ){
 
-        artworkImage.className = `artworkImage ${artworkImageList[indexOfImages].ratio}`
+        // artworkImage.className = `artworkImage ${artworkImageList[indexOfImages].ratio}`
         artworkImage.src = artworkImageList[indexOfImages].source
-
+        //CAnimate change dimension
+        if( artworkImageList[indexOfImages].ratio === "horizontal" ){
+            TweenMax.to(artworkImage, 0.4, { width:"34.375vw", height:"22.9164062vw", objectFit: "cover" });
+        }
+        if( artworkImageList[indexOfImages].ratio === "vertical"){
+            TweenMax.to(artworkImage, 0.4, { width:"18.75vw", height:"28.125vw", objectFit: "cover"  });
+        }
+        //Initialize when reached to 50px
         mouseCounter = 0
-
+        //Pass to next image in array
         if ( indexOfImages < artworkImageList.length ) {
             indexOfImages ++
         }
 
     }
 
+    //If it reaches end of array restart
     if ( indexOfImages === artworkImageList.length ){
         indexOfImages = 0
     }
@@ -156,6 +167,7 @@ artworkContainer.addEventListener("mousemove", () => {
     // if( mouseCounter === 50 ){
     //     getArtworkCanvas.remove(); 
     // }
+
 
 })
 
