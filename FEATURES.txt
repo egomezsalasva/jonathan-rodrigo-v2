@@ -1,11 +1,24 @@
 //To Dos
+////////
 
-- Change image every 70px
+- After first 50px remake canvas
+- Images for commercial
+- Slideshow for commercial
+
+
+
+//Bugs
+//////
+
+- Glitchy change in style and source on slideshow
+
 
 
 //Github Commits
+////////////////
+
+
 
 
 //Future Features
-
-- Pointer draw FOR 70px then restart counter
+/////////////////

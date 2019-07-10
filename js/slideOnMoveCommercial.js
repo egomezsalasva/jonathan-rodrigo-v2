@@ -1,161 +1,142 @@
 
 //Selectors
-const artworkContainer = document.querySelector(".artworkLeftContainer") 
-const artworkImage = document.querySelector(".artworkImage") 
-const getArtworkCanvas = document.getElementById("artworkCanvas");
+const commercialContainer = document.querySelector(".commercialRightContainer") 
+const commercialImage = document.querySelector(".commercialImage") 
+// const getcommercialCanvas = document.getElementById("commercialCanvas");
 
 //Initialize Counters
-let indexOfImages = 1
-let mouseCounter = 0
+let indexOfCommercialImages = 1
+let mouseCounterCommercial = 0
 
-//Artwork Image List
-const artworkImageList = [
+//Commercial Image List
+const commercialImageList = [
     {
-        source: "./imgs/artwork01.png",
+        source: "./imgs/commercial01.png",
+        ratio: "vertical"
+    },
+    {
+        source: "./imgs/commercial02.png",
+        ratio: "vertical"
+    },
+    {
+        source: "./imgs/commercial03.png",
         ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork02.png",
+        source: "./imgs/commercial04.png",
+        ratio: "vertical"
+    },
+    {
+        source: "./imgs/commercial05.png",
         ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork03.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial06.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork04.png",
-        ratio: "vertical",
+        source: "./imgs/commercial07.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork05.png",
-        ratio: "vertical",
+        source: "./imgs/commercial08.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork06.png",
-        ratio: "vertical",
+        source: "./imgs/commercial09.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork07.png",
-        ratio: "vertical",
+        source: "./imgs/commercial10.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork08.png",
-        ratio: "vertical",
+        source: "./imgs/commercial11.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork09.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial12.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork10.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial13.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork11.png",
-        ratio: "vertical",
+        source: "./imgs/commercial14.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork12.png",
-        ratio: "vertical",
+        source: "./imgs/commercial15.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork13.png",
-        ratio: "vertical",
+        source: "./imgs/commercial16.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork14.png",
-        ratio: "hrizontal",
+        source: "./imgs/commercial17.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork15.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial18.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork16.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial19.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork17.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial20.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork18.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial21.png",
+        ratio: "horizontal"
     },
     {
-        source: "./imgs/artwork19.png",
-        ratio: "vertical",
+        source: "./imgs/commercial22.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork20.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial23.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork21.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial24.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork22.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial25.png",
+        ratio: "vertical"
     },
     {
-        source: "./imgs/artwork23.png",
-        ratio: "horizontal",
-    },
-    {
-        source: "./imgs/artwork24.png",
-        ratio: "horizontal",
-    },
-    {
-        source: "./imgs/artwork25.png",
-        ratio: "horizontal",
-    },
-    {
-        source: "./imgs/artwork26.png",
-        ratio: "horizontal",
-    },
-    {
-        source: "./imgs/artwork27.png",
-        ratio: "vertical",
-    },
-    {
-        source: "./imgs/artwork28.png",
-        ratio: "horizontal",
-    },
-    {
-        source: "./imgs/artwork29.png",
-        ratio: "horizontal",
+        source: "./imgs/commercial26.png",
+        ratio: "vertical"
     },
 ]
 
 
-
-
 //Slideshow Images On Mouse Move
-artworkContainer.addEventListener("mousemove", () => {
+commercialContainer.addEventListener("mousemove", () => {
 
-    mouseCounter ++
+    mouseCounterCommercial ++
 
-    if( mouseCounter > 50 ){
+    if( mouseCounterCommercial > 50 ){
 
-        artworkImage.className = `artworkImage ${artworkImageList[indexOfImages].ratio}`
-        artworkImage.src = artworkImageList[indexOfImages].source
+        commercialImage.className = `commercialImage ${commercialImageList[indexOfCommercialImages].ratio}`
+        commercialImage.src = commercialImageList[indexOfCommercialImages].source
 
-        mouseCounter = 0
+        mouseCounterCommercial = 0
 
-        if ( indexOfImages < artworkImageList.length ) {
-            indexOfImages ++
+        if ( indexOfCommercialImages < commercialImageList.length ) {
+            indexOfCommercialImages ++
         }
 
     }
 
-    if ( indexOfImages === artworkImageList.length ){
-        indexOfImages = 0
+    if ( indexOfCommercialImages === commercialImageList.length ){
+        indexOfCommercialImages = 0
     }
 
-    // if( mouseCounter === 50 ){
-    //     getArtworkCanvas.remove(); 
-    // }
-
 })
-

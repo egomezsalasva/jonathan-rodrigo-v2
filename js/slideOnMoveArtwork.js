@@ -1,8 +1,10 @@
+//Dependencies
+// drawArtwork L.157
 
 //Selectors
 const artworkContainer = document.querySelector(".artworkLeftContainer") 
 const artworkImage = document.querySelector(".artworkImage") 
-const getArtworkCanvas = document.getElementById("artworkCanvas");
+
 
 //Initialize Counters
 let indexOfImages = 1
@@ -128,47 +130,6 @@ const artworkImageList = [
     },
 ]
 
-//Canvas
-const artworkCanvas = getArtworkCanvas.getContext('2d')
-resize();
-
-//Last Known Position
-var canvasPosition = { x: 0, y: 0 };
-
-// new position from mouse event
-function setPosition(e) {
-    canvasPosition.x = e.clientX;
-    canvasPosition.y = e.clientY;
-}
-
-function resize() {
-    artworkCanvas.canvas.width = artworkContainer.offsetWidth;
-    artworkCanvas.canvas.height = artworkContainer.offsetHeight;
-}
-
-function draw(e) {
-    // mouse left button must be pressed
-    // if (e.buttons !== 1) return;
-
-    artworkCanvas.beginPath(); // begin
-
-    artworkCanvas.lineWidth = 1.5;
-    // artworkCanvas.lineCap = 'round';
-    artworkCanvas.strokeStyle = '#000';
-
-    artworkCanvas.moveTo(canvasPosition.x, canvasPosition.y); // from
-    setPosition(e);
-    artworkCanvas.lineTo(canvasPosition.x, canvasPosition.y); // to
-    
-    artworkCanvas.stroke(); // draw it!
-
-}
-
-window.addEventListener('resize', resize);
-document.addEventListener('mousemove', draw);
-document.addEventListener('mousedown', setPosition);
-document.addEventListener('mouseenter', setPosition);
-
 
 //Slideshow Images On Mouse Move
 artworkContainer.addEventListener("mousemove", () => {
@@ -192,9 +153,9 @@ artworkContainer.addEventListener("mousemove", () => {
         indexOfImages = 0
     }
 
-    if( mouseCounter === 50 ){
-        getArtworkCanvas.remove(); 
-    }
+    // if( mouseCounter === 50 ){
+    //     getArtworkCanvas.remove(); 
+    // }
 
 })
 
