@@ -2,22 +2,21 @@
 ////////
 
 - After first 50px remake canvas
-- Images for commercial
-- Slideshow for commercial
-
+- Design Phone Home
+- Design Commercial
+- Artwork: Make next(+number) follow the cursor
+- Artwork: On hover image make white overlay
 
 
 //Bugs
 //////
-
-- Glitchy change in style and source on slideshow
 
 
 
 //Github Commits
 ////////////////
 
-
+- Animate commercial
 
 
 //Future Features

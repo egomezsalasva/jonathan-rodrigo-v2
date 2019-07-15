@@ -7,7 +7,7 @@ const artworkImage = document.querySelector(".artworkImage")
 
 
 //Initialize Counters
-let indexOfImages = 0
+let indexOfArtworkImages = 1
 let mouseCounter = 0
 
 
@@ -141,27 +141,33 @@ artworkContainer.addEventListener("mousemove", () => {
     //Every X pixels change image and dimensions - When it reaches 50 initialize(for loop could work) 
     if( mouseCounter > 50 ){
 
-        // artworkImage.className = `artworkImage ${artworkImageList[indexOfImages].ratio}`
-        artworkImage.src = artworkImageList[indexOfImages].source
-        //CAnimate change dimension
-        if( artworkImageList[indexOfImages].ratio === "horizontal" ){
-            TweenMax.to(artworkImage, 0.4, { width:"34.375vw", height:"22.9164062vw", objectFit: "cover" });
+        // artworkImage.className = `artworkImage ${artworkImageList[indexOfArtworkImages].ratio}`
+        artworkImage.src = artworkImageList[indexOfArtworkImages].source
+        //Animate change dimension
+        if( artworkImageList[indexOfArtworkImages].ratio === "horizontal" ){
+            //TweenMax.from(artworkImage, 0.1, { filter: "blur(1px)" });
+            TweenMax.to(".artworkBackgroundImage", 0.3, { width:"34.375vw", height:"22.7164062vw" });
+            TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
+            TweenMax.to(artworkImage, 0.3, { width:"34.375vw", height:"22.9164062vw", objectFit: "cover" });
         }
-        if( artworkImageList[indexOfImages].ratio === "vertical"){
-            TweenMax.to(artworkImage, 0.4, { width:"18.75vw", height:"28.125vw", objectFit: "cover"  });
+        if( artworkImageList[indexOfArtworkImages].ratio === "vertical"){
+            //TweenMax.from(artworkImage, 0.1, { filter: "blur(1px)" });
+            TweenMax.to(".artworkBackgroundImage", 0.3, {  width:"18.75vw", height:"28.125vw"});
+            TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
+            TweenMax.to(artworkImage, 0.3, { width:"18.75vw", height:"28.125vw", objectFit: "cover"  });
         }
         //Initialize when reached to 50px
         mouseCounter = 0
         //Pass to next image in array
-        if ( indexOfImages < artworkImageList.length ) {
-            indexOfImages ++
+        if ( indexOfArtworkImages < artworkImageList.length ) {
+            indexOfArtworkImages ++
         }
 
     }
 
     //If it reaches end of array restart
-    if ( indexOfImages === artworkImageList.length ){
-        indexOfImages = 0
+    if ( indexOfArtworkImages === artworkImageList.length ){
+        indexOfArtworkImages = 0
     }
 
     // if( mouseCounter === 50 ){

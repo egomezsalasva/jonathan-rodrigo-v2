@@ -124,8 +124,22 @@ commercialContainer.addEventListener("mousemove", () => {
 
     if( mouseCounterCommercial > 50 ){
 
-        commercialImage.className = `commercialImage ${commercialImageList[indexOfCommercialImages].ratio}`
+        // commercialImage.className = `commercialImage ${commercialImageList[indexOfCommercialImages].ratio}`
         commercialImage.src = commercialImageList[indexOfCommercialImages].source
+        //Animate change dimension
+        if( commercialImageList[indexOfCommercialImages].ratio === "horizontal" ){
+            //TweenMax.from(commercialImage, 0.1, { filter: "blur(1px)" });
+            //TweenMax.to(".commercialBackgroundImage", 0.4, { width:"34.375vw", height:"22.9164062vw" });
+            // TweenMax.to(".commercialBackgroundImage", 0.4, { width:"34.375vw", height:"22.7164062vw" });
+            // TweenMax.from(commercialImage, 0.4, { opacity: 0 }).delay(0.4);
+            TweenMax.to(commercialImage, 0.4, { width:"34.375vw", height:"22.9164062vw", objectFit: "cover" });
+        }
+        if( commercialImageList[indexOfCommercialImages].ratio === "vertical"){
+            //TweenMax.from(commercialImage, 0.1, { filter: "blur(1px)" });
+            // TweenMax.to(".commercialBackgroundImage", 0.4, { width:"18.75vw", height:"28.125vw" });
+            // TweenMax.from(commercialImage, 0.4, { opacity: 0 }).delay(0.4);
+            TweenMax.to(commercialImage, 0.4, { width:"18.75vw", height:"28.125vw", objectFit: "cover"  });
+        }
 
         mouseCounterCommercial = 0
 
