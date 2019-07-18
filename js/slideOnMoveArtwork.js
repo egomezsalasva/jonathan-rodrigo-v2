@@ -146,14 +146,14 @@ artworkContainer.addEventListener("mousemove", () => {
         //Animate change dimension
         if( artworkImageList[indexOfArtworkImages].ratio === "horizontal" ){
             //TweenMax.from(artworkImage, 0.1, { filter: "blur(1px)" });
-            TweenMax.to(".artworkBackgroundImage", 0.3, { width:"34.375vw", height:"22.7164062vw" });
-            TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
+            // TweenMax.to(".artworkBackgroundImage", 0.3, { width:"34.375vw", height:"22.7164062vw" });
+            // TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
             TweenMax.to(artworkImage, 0.3, { width:"34.375vw", height:"22.9164062vw", objectFit: "cover" });
         }
         if( artworkImageList[indexOfArtworkImages].ratio === "vertical"){
             //TweenMax.from(artworkImage, 0.1, { filter: "blur(1px)" });
-            TweenMax.to(".artworkBackgroundImage", 0.3, {  width:"18.75vw", height:"28.125vw"});
-            TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
+            // TweenMax.to(".artworkBackgroundImage", 0.3, {  width:"18.75vw", height:"28.125vw"});
+            // TweenMax.from(artworkImage, 0.3, { opacity: 0 }).delay(0.3);
             TweenMax.to(artworkImage, 0.3, { width:"18.75vw", height:"28.125vw", objectFit: "cover"  });
         }
         //Initialize when reached to 50px

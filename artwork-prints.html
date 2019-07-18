@@ -25,17 +25,26 @@
 
         </nav>
 
+        
+
         <section class="projectContainer odd">
-            <img src="./imgs/artworkProject01img01.png" class="horizontal" alt="">
-            <div class="prevPointerContainer"></div>
-            <div class="nextPointerContainer"></div>
+            <div class="whiteOverlay"></div>
+            <img src="./imgs/artworkProject01img01.png" id="imgArtworkProject01" class="horizontal" alt="">
+            <div class="prevPointerContainer">
+                    <p class="prevCursor">prev</p>
+            </div>
+            <div class="nextPointerContainer">
+                    <p class="nextCursor" id="nextCursorArtworkProject01">next</p>
+            </div>
             <h2 class="projectTitle">project name  -  1 / 29</h2>
         </section>
 
         <section class="projectContainer even">
             <img src="./imgs/artworkProject02img01.png" class="horizontal" alt="">
-            <div class="prevPointerContainer"></div>
-            <div class="nextPointerContainer"></div>
+            <div class="prevPointerContainer">
+            </div>
+            <div class="nextPointerContainer">
+            </div>
             <h2 class="projectTitle">project name  -  2 / 29</h2>
         </section>
 
@@ -51,11 +60,11 @@
                 <div class="prevPointerContainer"></div>
                 <div class="nextPointerContainer"></div>
                 <h2 class="projectTitle">project name  -  4 / 29</h2>
-            </section>
+        </section>
         
         <!-- <script src="./js//drawArtwork.js" async defer></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-        <script src="./js/slideOnMoveArtwork.js" async defer></script>
-        <script src="./js/slideOnMoveCommercial.js" async defer></script>
+        <script src="./js/slideshow.js" async defer></script>
+        <script src="./js/whiteOverlay.js" async defer></script>
     </body>
 </html>

@@ -13,7 +13,11 @@
 @import './shared/_variablesAndMixins.scss';
 
 //Z-Index
+// artwork/print image : 500
 // logoType, aboutLink: 1000
+// whiteOverlay : 1500
+
+
 
 
 
@@ -65,25 +69,102 @@ header{
 
 @import './home/_home.scss';
 
+.whiteOverlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $nathanWhite;
+    z-index: 1500;
+    display: none;
+    opacity: 0;
+}
 
 .projectContainer {
     background: $nathanWhite;
     position: sticky;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
+    &:last-of-type{
+        height: 100vh;
+    }
+
     img{
         position: absolute;
         left: 50vw;
         top: 50vh;
         transform: translate(-50%, -50%);
+        z-index: 500;
     }
+
+    .prevPointerContainer{
+        position: absolute;
+        width: 50vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        .prevCursor{
+            //text
+            font-family: $feniceStack;
+            font-size: $font20;
+            color: $nathanBlack;
+            line-height: 20px;
+            //position
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            //cursor
+            cursor: default;
+            user-select: none;
+            //display
+            display: none;
+            
+        }
+    }
+
+    .nextPointerContainer{
+        position: absolute;
+        width: 50vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        .nextCursor{
+            //text
+            font-family: $feniceStack;
+            font-size: $font20;
+            color: $nathanBlack;
+            line-height: 20px;
+            //position
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            //cursor
+            cursor: default;
+            user-select: none;
+            //display
+            display: none;
+            
+        }
+    }
+
+    .projectTitle{
+        user-select: none;
+    }
+
     .horizontal{
         width: 48.4375vw;
     }
+
     .vertical{
         width: 25vw;
     }
+
     h2{
         //text
         font-family: $feniceStack;
@@ -92,7 +173,7 @@ header{
         line-height: 20px;
         //position
         position: absolute;
-        bottom: 50px;
+        bottom: calc(50px + 20vh);
         left: $width60px;
     }
 }
@@ -102,5 +183,5 @@ header{
 }
 
 .even{
-    background: #FFF;
+    background: $nathanWhite;
 }
